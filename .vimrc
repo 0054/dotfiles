@@ -9,6 +9,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
+Plug 'kien/ctrlp.vim'
 Plug 'ConradIrwin/vim-bracketed-paste' "cp
 Plug 'cocopon/iceberg.vim' "colorscheme
 Plug 'NLKNguyen/papercolor-theme' "colorscheme
