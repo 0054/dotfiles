@@ -9,12 +9,17 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
-Plug 'kien/ctrlp.vim'
 Plug 'ConradIrwin/vim-bracketed-paste' "cp
 Plug 'cocopon/iceberg.vim' "colorscheme
 Plug 'NLKNguyen/papercolor-theme' "colorscheme
+Plug 'dbeniamine/cheat.sh-vim' "cheat list
+Plug 'kien/ctrlp.vim'
 "Plug 'fortes/vim-escuro' "colorscheme
-Plug 'hdima/python-syntax' 
+"Plug 'hdima/python-syntax' 
+"Plug 'Kazark/vim-SimpleSmoothScroll'
+"sniplets
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -25,6 +30,14 @@ syntax enable
 let g:python_highlight_space_errors = 1
 let g:python_higtlight_all = 1
 
+"snipets
+"set runtimepath+=~/.vim/UltiSnips/
+"let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
+"let g:UltiSnipsSnippetDirectories = ["~/.vim/UltiSnips/"]
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger= '<c-j>'
+let g:UltiSnipsBackwardTrigger = '<c-k>'
+
 "colorscheme iceberg
 colorscheme PaperColor
 set background=dark
@@ -34,6 +47,8 @@ set background=dark
 let g:airline_powerline_fonts = 1 "apt install fonts-powerline
 "let g:airline_theme='iceberg'
 let g:airline_theme='papercolor'
+
+
 
 "indentLine
 let g:indentLine__setColors = 0
@@ -46,14 +61,16 @@ let g:ycm_python_binary_path = '/usr/bin/python3.6'
 "общие настройки
 
 let g:mapleader=','
-set number      
-set expandtab   "replace '\t' ' '
-set tabstop=4
+set number      "вклюить нумирацию строк
+set expandtab   "заменит табуляцию на пробелы
+set tabstop=4   "размер табуляции =4 пробела
+set shiftwidth=4
 set smarttab
-set hlsearch
+set hlsearch "подсветка искомого слова
 set incsearch 
-set cursorline
-set mouse=a
+set cursorline "подсвечивает строку с курсором
+"set mouse=a
+
 
 "mappings
 nnoremap J :m .+1<CR>==
