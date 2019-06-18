@@ -1,23 +1,28 @@
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion' 
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
-Plug 'ConradIrwin/vim-bracketed-paste' "cp
-Plug 'cocopon/iceberg.vim' "colorscheme
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+
+Plug '0054/vim-colors-paramountblue'
+Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme' "colorscheme
-Plug 'dbeniamine/cheat.sh-vim' "cheat list
+
 Plug 'kien/ctrlp.vim'
-"Plug 'fortes/vim-escuro' "colorscheme
-"Plug 'hdima/python-syntax' 
-"Plug 'Kazark/vim-SimpleSmoothScroll'
-"sniplets
+Plug 'NLKNguyen/copy-cut-paste.vim'
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
@@ -38,15 +43,16 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger= '<c-j>'
 let g:UltiSnipsBackwardTrigger = '<c-k>'
 
+colorscheme paramountblue
 "colorscheme iceberg
-colorscheme PaperColor
-set background=dark
+"colorscheme PaperColor
+"set background=dark
 
 "airline
 "let g:airline#extensions#tabline#enabled = 1  "show tabs
 let g:airline_powerline_fonts = 1 "apt install fonts-powerline
 "let g:airline_theme='iceberg'
-let g:airline_theme='papercolor'
+"let g:airline_theme='papercolor'
 
 
 
@@ -57,19 +63,20 @@ let g:indentLine__setColors = 0
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_python_binary_path = '/usr/bin/python3.6'
-"общие настройки
+let g:ycm_python_binary_path = '/usr/bin/env python3'
 
 let g:mapleader=','
-set number      "вклюить нумирацию строк
-set expandtab   "заменит табуляцию на пробелы
-set tabstop=4   "размер табуляции =4 пробела
+set number      
+set expandtab   
+set tabstop=4   
 set shiftwidth=4
 set smarttab
-set hlsearch "подсветка искомого слова
+set hlsearch 
 set incsearch 
-set cursorline "подсвечивает строку с курсором
+set cursorline 
+set clipboard=unnamed
 "set mouse=a
+autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 
 
 "mappings
@@ -81,8 +88,11 @@ nnoremap <C-k> <C-y>
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
-map <F2> :NERDTreeToggle<CR>
+" map <F2> :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeToggle<CR>
+" map <Leader> <Plug>(easymotion-prefix)
 map <Leader> <Plug>(easymotion-prefix)
-map <F5> :w\|!python3.6 %<CR>
-map <F6> :w\|!python3.6 -m pytest -v %<CR>
+map <F5> :w\|!/usr/bin/env python3 %<CR>
+map <F6> :w\|!/usr/bin/env python3 -m pytest -v %<CR>
+map <F7> :w\|!/usr/bin/env python3 -m pdb3 %<CR>
 
