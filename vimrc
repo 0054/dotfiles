@@ -63,7 +63,7 @@ let g:indentLine__setColors = 0
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_python_binary_path = '/usr/bin/env python3'
+let g:ycm_python_binary_path = 'python3'
 
 let g:mapleader=','
 set number      
