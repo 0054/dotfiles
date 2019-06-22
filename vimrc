@@ -14,6 +14,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 
 Plug '0054/vim-colors-paramountblue'
 Plug 'cocopon/iceberg.vim'
@@ -79,14 +80,14 @@ set clipboard=unnamed
 autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 
 
-"mappings
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
-nnoremap <C-j> <C-e>
-nnoremap <C-k> <C-y>
+""mappings
+"nnoremap J :m .+1<CR>==
+"nnoremap K :m .-2<CR>==
+"nnoremap <C-j> <C-e>
+"nnoremap <C-k> <C-y>
 
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+" map <ScrollWheelUp> <C-Y>
+" map <ScrollWheelDown> <C-E>
 
 " map <F2> :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeToggle<CR>
