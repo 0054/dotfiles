@@ -24,6 +24,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'NLKNguyen/copy-cut-paste.vim'
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'mattn/emmet-vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
@@ -33,16 +34,16 @@ call plug#end()
 
 "highlight
 syntax enable
-let g:python_highlight_space_errors = 1
-let g:python_higtlight_all = 1
+" let g:python_highlight_space_errors = 1
+" let g:python_higtlight_all = 1
 
 "snipets
 "set runtimepath+=~/.vim/UltiSnips/
 "let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips/"
 "let g:UltiSnipsSnippetDirectories = ["~/.vim/UltiSnips/"]
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger= '<c-j>'
-let g:UltiSnipsBackwardTrigger = '<c-k>'
+ let g:UltiSnipsExpandTrigger="<c-j>"
+ let g:UltiSnipsJumpForwardTrigger= '<c-j>'
+ let g:UltiSnipsBackwardTrigger = '<c-k>'
 
 colorscheme paramountblue
 "colorscheme iceberg
@@ -89,9 +90,8 @@ autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 " map <ScrollWheelUp> <C-Y>
 " map <ScrollWheelDown> <C-E>
 
-" map <F2> :NERDTreeToggle<CR>
-nnoremap <Leader>f :NERDTreeToggle<CR>
-" map <Leader> <Plug>(easymotion-prefix)
+map <F2> :NERDTreeToggle<CR>
+" nnoremap <Leader>f :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <F5> :w\|!/usr/bin/env python3 %<CR>
 map <F6> :w\|!/usr/bin/env python3 -m pytest -v %<CR>
