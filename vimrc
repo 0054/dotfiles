@@ -30,6 +30,7 @@ Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+let g:mapleader=','
 
 
 "highlight
@@ -66,8 +67,8 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python3'
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-let g:mapleader=','
 set number      
 set expandtab   
 set tabstop=4   
@@ -91,7 +92,6 @@ autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 " map <ScrollWheelDown> <C-E>
 
 map <F2> :NERDTreeToggle<CR>
-" nnoremap <Leader>f :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <F5> :w\|!/usr/bin/env python3 %<CR>
 map <F6> :w\|!/usr/bin/env python3 -m pytest -v %<CR>
