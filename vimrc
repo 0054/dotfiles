@@ -79,6 +79,7 @@ set incsearch
 set cursorline 
 set clipboard=unnamed
 "set mouse=a
+"set backspace=indent,eol,start
 autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 
 
