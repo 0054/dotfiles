@@ -1,0 +1,9 @@
+[user]
+	email = kofe54@jet.su
+	name = 0054
+[credential]
+	helper = cache
+[alias]
+    l = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%cn , %ar) <%ce>'
+    ; lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    ; lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
