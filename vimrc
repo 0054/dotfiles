@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
+Plug 'fatih/vim-go'
 
 Plug '0054/vim-colors-paramountblue'
 Plug 'cocopon/iceberg.vim'
@@ -52,13 +53,19 @@ let g:UltiSnipsBackwardTrigger = '<c-k>'
 "colorscheme iceberg
 " colorscheme PaperColor
 colorscheme rdark-terminal2
+" colorscheme simpleblack
 set background=dark
+
+
+let g:go_fmt_command = "goimports"
+let g:go_def_mapping_enabled = 0
 
 "airline
 "let g:airline#extensions#tabline#enabled = 1  "show tabs
 let g:airline_powerline_fonts = 1 "apt install fonts-powerline
 " let g:airline_theme='iceberg'
-let g:airline_theme='papercolor'
+" let g:airline_theme='papercolor'
+let g:airline_theme='simple'
 
 
 " terraform
@@ -107,3 +114,4 @@ map <Leader> <Plug>(easymotion-prefix)
 map <F5> :w\|!/usr/bin/env python3 %<CR>
 map <F6> :w\|!/usr/bin/env python3 -m pytest -v %<CR>
 map <F7> :w\|!/usr/bin/env python3 -m pdb3 %<CR>
+
