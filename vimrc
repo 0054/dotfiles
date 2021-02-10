@@ -1,26 +1,25 @@
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'easymotion/vim-easymotion' 
-Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
-Plug 'Yggdroot/indentLine'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 Plug 'fatih/vim-go'
+Plug 'vim-scripts/groovy.vim'
 
 Plug '0054/vim-colors-paramountblue'
+Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim'
 Plug 'NLKNguyen/papercolor-theme' "colorscheme
+Plug 'romainl/flattened'
 Plug 'vim-scripts/rdark-terminal2.vim'
 
 Plug 'kien/ctrlp.vim'
@@ -38,8 +37,11 @@ let g:mapleader=','
 
 "highlight
 syntax enable
-let g:python_highlight_space_errors = 1
-let g:python_higtlight_all = 1
+"au BufNewFile,BufRead Jenkinsfile setf groovy
+
+
+
+let g:ctrlp_show_hidden = 1
 
 "snipets
 "set runtimepath+=~/.vim/UltiSnips/
@@ -49,28 +51,47 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger= '<c-j>'
 let g:UltiSnipsBackwardTrigger = '<c-k>'
 
+
+" set t_Co=256
+
+" set termguicolors
 " colorscheme paramountblue
-"colorscheme iceberg
-" colorscheme PaperColor
-colorscheme rdark-terminal2
-" colorscheme simpleblack
+" colorscheme iceberg
+colorscheme PaperColor
+" colorscheme rdark-terminal2
+" colorscheme flattened_dark
+" colorscheme gruvbox
 set background=dark
+
 
 
 let g:go_fmt_command = "goimports"
 let g:go_def_mapping_enabled = 0
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>i <Plug>(go-info)
+au FileType go nmap <leader>d :GoIfErr<CR>
 
 "airline
 "let g:airline#extensions#tabline#enabled = 1  "show tabs
 let g:airline_powerline_fonts = 1 "apt install fonts-powerline
+" let g:airline_theme='gruvbox'
 " let g:airline_theme='iceberg'
-" let g:airline_theme='papercolor'
-let g:airline_theme='simple'
+let g:airline_theme='papercolor'
+" let g:airline_theme='simple'
 
 
 " terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 
 "indentLine
@@ -94,6 +115,7 @@ set cursorline
 set clipboard=unnamed
 "set mouse=a
 autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
+autocmd FileType groovy setlocal et ts=4 ai sw=4 nu sts=0 indentkeys-=<:>
 
 
 "mappings
@@ -107,6 +129,9 @@ autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 let g:user_emmet_leader_key='<C-X>'
 
 
+nmap ,t :tabnew<CR>
+nmap tl :tabn<CR>
+nmap th :tabp<CR>
 map <F2> :NERDTreeToggle<CR>
 " nnoremap <Leader>f :NERDTreeToggle<CR>
 " map <Leader> <Plug>(easymotion-prefix)
