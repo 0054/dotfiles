@@ -2,8 +2,15 @@
 	email = kofe54@gmail.com
 	name = 0054
 [credential]
-	helper = cache
+    helper = cache --timeout 43000
+[core]
+	editor = vim
 [alias]
     l = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%cn , %ar) <%ce>'
     ; lol = log --graph --decorate --pretty=oneline --abbrev-commit
     ; lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[user]
+	email = epushkin@traceair.net
+	name = pushkin
+	; email = kofe54@gmail.com
+	; name = 0054
