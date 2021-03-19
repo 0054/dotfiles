@@ -113,6 +113,7 @@ set hlsearch
 set incsearch 
 set cursorline 
 set clipboard=unnamed
+set colorcolumn=120
 "set mouse=a
 autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 indentkeys-=<:>
 autocmd FileType groovy setlocal et ts=4 ai sw=4 nu sts=0 indentkeys-=<:>
@@ -129,6 +130,18 @@ autocmd FileType groovy setlocal et ts=4 ai sw=4 nu sts=0 indentkeys-=<:>
 let g:user_emmet_leader_key='<C-X>'
 
 
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
 nmap ,t :tabnew<CR>
 nmap tl :tabn<CR>
 nmap th :tabp<CR>
